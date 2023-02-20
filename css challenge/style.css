@@ -1,0 +1,201 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap");
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --red: #ef5042;
+    --blue: #04a4b9;
+}
+
+body {
+    font-family: "Noto Sans KR", sans-serif;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 2fr 2fr 1fr;
+    grid-template-areas:
+        "aside home menu side-menu"
+        "aside home menu event"
+        "aside recommend review review";
+    width: 100%;
+    height: 100vh;
+    gap: 5px;
+    min-width: 1280px;
+    min-height: 960px;
+    background-color: var(--red);
+    padding: 5px;
+}
+
+/* aside bar */
+
+#aside {
+    grid-area: aside;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.aside-top {
+    padding: 10px;
+}
+
+.aside-top .brand-image img {
+    width: 100%;
+    background-color: var(--red);
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+.aside-list li {
+    padding: 20px 0px 20px 30px;
+    border-top: 1px solid black;
+    opacity: 0.7;
+    font-weight: 700;
+}
+
+.aside-list li:hover {
+    background-color: var(--blue);
+    color: white;
+}
+
+.aside-list li:last-child {
+    border-bottom: 1px solid black;
+    background-color: var(--blue);
+    color: white;
+}
+
+.aside-bottom {
+    background-color: rgba(0, 0, 0, 0.1);
+    font-size: 15px;
+    padding: 20px;
+}
+
+.aside-bottom h1 {
+    margin-bottom: 5px;
+    opacity: 0.7;
+}
+
+/* home */
+
+#home {
+    grid-area: home;
+    background-color: white;
+}
+
+#home .commercial {
+    width: 100%;
+    height: 100%;
+}
+
+/* menu */
+#menu {
+    grid-area: menu;
+    background-image: url("https://www.lotteeatz.com/upload/CONTENT_IMG/2023/02/07/20230207095007962_2.jpg");
+    background-size: cover;
+}
+
+/* recommend */
+
+#recommend {
+    grid-area: recommend;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+#recommend .recommend-image img {
+    width: 140px;
+    height: 100px;
+    background-color: whitesmoke;
+    border-radius: 5px;
+}
+
+#recommend .recommend-name {
+    display: flex;
+    flex-direction: column;
+    font-size: 20px;
+}
+
+#recommend .recommend-name span:first-child {
+    width: fit-content;
+    padding: 10px;
+    border-radius: 10px;
+    color: white;
+    background-color: #ef5042;
+    margin-bottom: 10px;
+}
+
+#recommend .recommend-name span:last-child {
+    padding: 10px 0;
+    border-bottom: 1px solid black;
+    opacity: 0.7;
+}
+
+/* side-menu */
+
+#side-menu {
+    max-height: 100%;
+    overflow-y: scroll;
+    grid-area: side-menu;
+    background-image: url("");
+    background-size: cover;
+    background-position: center center;
+}
+
+#side-menu .side-menu__image img {
+    width: 100%;
+}
+
+/* event */
+
+#event {
+    grid-area: event;
+}
+
+#event .event-image {
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+
+#event .event-image img {
+    opacity: 0.8;
+    transition: opacity 0.6s ease-in-out;
+}
+
+#event .event-image img:hover {
+    opacity: 1;
+}
+#review {
+    grid-area: review;
+    background-color: var(--red);
+    gap: 5px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+#review div {
+    border-radius: 5px;
+}
+
+#review div:first-child {
+    background-image: url("https://pup-review-phinf.pstatic.net/MjAyMzAyMDFfMTcx/MDAxNjc1MjU3OTE1MDM1.HakuIzF8PAcjT0qWhZHgPoRum64WXfr3GWOWHzUylzMg.BtxmROuwNialZ4SPMt4kbMccgTllHFp8C4NK89ZvNf4g.JPEG/20230113_123833.jpg");
+    background-size: cover;
+    grid-column: span 1;
+    grid-row: span 2;
+}
+#review div:nth-child(2) {
+    background-image: url("https://pup-review-phinf.pstatic.net/MjAyMjExMDlfMjIz/MDAxNjY3OTY4ODI0Mjk5.oDAOjH8EHPjh574LsQRym0zB4vlMFxde8X8XII3hUL0g.vcb3Gou0baGhq9WAHSpvdUZ0Opcm4GPIAcyYNCDfJ04g.JPEG/600EDFED-45E4-4DE4-BB04-41A8FB014140.jpeg");
+    background-size: cover;
+    grid-column: span 1;
+    grid-row: span 2;
+}
+#review div:last-child {
+    background-image: url("https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAxODA1MTdfNzMg%2FMDAxNTI2NTE4ODgxMjE2.1YhEkPJOx0XWoT1NkxyAvDteOOMmeVCfd2Vro21_t7og.uo6kafrVQUoEH9sMESeWxzClAAh-1b9VGoySCLMiUMAg.JPEG.vlfqhqo%2FKakaoTalk_Moim_5UHA6rj30h2dTLVkhJYIptC12XuEGB.jpg");
+    background-size: cover;
+    grid-column: span 1;
+    grid-row: span 2;
+}
